@@ -7,15 +7,4 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   };
 
-
-/* const firebaseConfig = {
-    apiKey: "AIzaSyAjNE-MiMTdbZNyw9wmeXy2xj8wVY7qIyM",
-  authDomain: "creative-agency-bf566.firebaseapp.com",
-  projectId: "creative-agency-bf566",
-  storageBucket: "creative-agency-bf566.appspot.com",
-  messagingSenderId: "572529997411",
-  appId: "1:572529997411:web:4c6ab4f5e779229c846a56"
-
-   
-}; */
 export default firebaseConfig;
