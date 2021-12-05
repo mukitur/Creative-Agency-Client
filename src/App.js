@@ -2,7 +2,7 @@ import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import About from './Pages/About/About';
-import AddServices from './Pages/AddServices/AddServices';
+import AddServices from './Pages/Dashboard/AddServices/AddServices';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
@@ -40,7 +40,7 @@ function App() {
                   <Register></Register>
               </Route>
               <Route path="/addservice">
-                  <AddServices></AddServices>
+                  <AddServices/>
               </Route>
               <PrivateRoute path="/dashboard">
                   <Dashboard/>
