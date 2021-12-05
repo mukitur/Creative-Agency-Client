@@ -10,5 +10,6 @@ We Used The following:
 6. Express JS, Node JS
 7. MongoDB
 8. Access Admin DashBoard by logged in.
-9. Admin Role:
-   - Admin can Add services
+9. Used React Hook Form, Axios
+10. Admin Role:
+    - Admin can Add services

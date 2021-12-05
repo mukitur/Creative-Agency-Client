@@ -2,11 +2,14 @@ import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import About from './Pages/About/About';
+import AddServices from './Pages/AddServices/AddServices';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
               </Route>
               <Route path="/register">
                   <Register></Register>
+              </Route>
+              <Route path="/addservice">
+                  <AddServices></AddServices>
               </Route>
           </Switch>
         </BrowserRouter>
