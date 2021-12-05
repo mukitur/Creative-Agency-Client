@@ -21,7 +21,6 @@ const AddServices = () => {
     }    
     return (
         <>
-            <Navigation/>
             <div className="add-services">
                 <Typography style={{textAlign: 'center'}} variant="h3" className="my-5">Please add services</Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
