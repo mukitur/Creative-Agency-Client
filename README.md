@@ -7,4 +7,8 @@ We Used The following:
 3. Firebase Authentication - used email and password and Gmail
 4. Material UI
 5. Secure Firebase API key by adding env.local file
-6.
+6. Express JS, Node JS
+7. MongoDB
+8. Access Admin DashBoard by logged in.
+9. Admin Role:
+   - Admin can Add services
