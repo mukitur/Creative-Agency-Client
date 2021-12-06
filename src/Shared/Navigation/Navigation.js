@@ -72,6 +72,11 @@ const Navigation = () => {
           </ListItem>
           <Divider />
           <ListItem button>
+            <ListItemIcon> <PersonIcon/></ListItemIcon>
+            <Link className={mobileNavItem} to ="/weoffer">We Offer</Link>
+          </ListItem>
+          <Divider />
+          <ListItem button>
             <ListItemIcon> <HomeIcon/></ListItemIcon>
             <Link className={WorkspacesIcon} to ="/portfolio">Portfolio</Link>
           </ListItem>
@@ -129,6 +134,7 @@ const Navigation = () => {
                 <Box className = {navItemContainer}  sx={{ flexGrow: 1 }}>
                     <Link className={navItem} to = "/"><Button color="inherit">Home</Button></Link>
                     <Link className={navItem} to = "/about"><Button color="inherit">About</Button></Link>
+                    <Link className={navItem} to = "/weoffer"><Button color="inherit">We Offer</Button></Link>
                     <Link className={navItem} to = "/portfolio"><Button color="inherit">Portfolio</Button></Link>
                     <Link className={navItem} to = "/contact"><Button color="inherit">Contact</Button></Link>
                     {

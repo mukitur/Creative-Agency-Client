@@ -10,6 +10,9 @@ import Register from './Pages/Login/Register/Register';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import WeOffer from './Pages/WeOffer/WeOffer';
+import ServiceDetails from './Pages/ShowServices/ServiceDetails';
+import OrderNow from './Pages/AllOrder/OrderNow/OrderNow';
 
 
 function App() {
@@ -42,6 +45,15 @@ function App() {
               <Route path="/addservice">
                   <AddServices/>
               </Route>
+              <Route path="/weoffer">
+                  <WeOffer/>
+              </Route>
+              <Route path="/services/:serviceId">
+                  <ServiceDetails/>
+              </Route>
+              <PrivateRoute path="/ordernow">
+                  <OrderNow/>
+              </PrivateRoute>
               <PrivateRoute path="/dashboard">
                   <Dashboard/>
               </PrivateRoute>

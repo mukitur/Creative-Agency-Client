@@ -25,8 +25,11 @@ const AddServices = () => {
                 <Typography style={{textAlign: 'center'}} variant="h3" className="my-5">Please add services</Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input  {...register("name", { required: true, maxLength: 80 })} placeholder="Name"/>
-                    <textarea {...register("description", { required: true, maxLength: 500 })} placeholder="Service Description" />
-                    <input {...register("image")} placeholder="Image" />
+                    <textarea {...register("description", { required: true, maxLength: 300 })} placeholder="Service Short Description" />
+                    <textarea {...register("detaildescription", { required: true, maxLength: 800 })} placeholder="Service Detail Description" />
+                    <input {...register("image")} placeholder="Image for short description" />
+                    <input {...register("imagefordetail")} placeholder="Image for Detail description" />
+                    <input {...register("price")} placeholder="Price" />
                     <input type="submit"/>
                 </form>
             </div>

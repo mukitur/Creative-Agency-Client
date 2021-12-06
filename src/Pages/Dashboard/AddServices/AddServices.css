@@ -1,5 +1,5 @@
 .add-services {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 .add-services form {
   display: flex;
@@ -15,5 +15,5 @@
 .add-services form textarea {
   width: 50%;
   margin-bottom: 10px;
-  height: 150px;
+  height: 120px;
 }
