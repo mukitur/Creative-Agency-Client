@@ -28,7 +28,7 @@ function App() {
                   <About></About>
               </Route>
               <Route path="/portfolio">
-                  <Portfolio></Portfolio>
+                  <Portfolio/>
               </Route>
               <Route path="/contact">
                   <Contact></Contact>
