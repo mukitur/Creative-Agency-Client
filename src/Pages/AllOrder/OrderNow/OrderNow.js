@@ -13,7 +13,7 @@ const OrderNow = () => {
         .then(res=>{
             console.log(res);
             if(res.data.insertedId){
-                alert('added successfully');
+                alert('Your Order placed successfully. Thank you!');
             }
             reset();
         })
@@ -34,7 +34,6 @@ const OrderNow = () => {
                     <input  {...register("email", { required: true, maxLength: 30 })} placeholder="Email"/>
                     <input  {...register("cell", { required: true, maxLength: 30 })} placeholder="Cell Number"/>
                     <textarea {...register("address", { required: true, maxLength: 800 })} placeholder="Shipping Address" />
-                    
                     <input type="submit"/>
                 </form>
             </div>
