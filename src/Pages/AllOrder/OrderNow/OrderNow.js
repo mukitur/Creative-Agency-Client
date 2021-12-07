@@ -30,10 +30,11 @@ const OrderNow = () => {
                     Thanks for choosing Creative Agency!
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input  {...register("name", { required: true, maxLength: 80 })} placeholder="Name"/>
-                    <input  {...register("email", { required: true, maxLength: 30 })} placeholder="Email"/>
+                    <input  {...register("name", { required: true, maxLength: 80 })} placeholder="Name" />
+                    <input  {...register("email", { required: true, maxLength: 30 })} placeholder="Email" />
                     <input  {...register("cell", { required: true, maxLength: 30 })} placeholder="Cell Number"/>
                     <textarea {...register("address", { required: true, maxLength: 800 })} placeholder="Shipping Address" />
+                    <input  {...register("status", { required: true, maxLength: 7 })} placeholder="Pending"/>
                     <input type="submit"/>
                 </form>
             </div>

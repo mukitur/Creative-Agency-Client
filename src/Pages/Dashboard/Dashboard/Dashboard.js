@@ -21,6 +21,7 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import LogoutIcon from '@mui/icons-material/Logout';
+import ManageOrders from '../../AllOrder/ManageOrders/ManageOrders';
 
 const drawerWidth = 240;
 
@@ -56,6 +57,11 @@ function Dashboard(props) {
             </ListItem>
             <Divider />
             <ListItem button>
+                <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
+                <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/manageorder`}><Button color="inherit">Manage Order</Button></Link>
+            </ListItem>
+            <Divider />
+            <ListItem button>
                 <ListItemIcon> <LogoutIcon/></ListItemIcon>
                 {
                         user?.email ?
@@ -78,6 +84,7 @@ function Dashboard(props) {
         <CssBaseline />
         <AppBar
           position="fixed"
+          style={{backgroundColor: '#fbd062', color: 'black'}}
           sx={{
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             ml: { sm: `${drawerWidth}px` },
@@ -142,6 +149,9 @@ function Dashboard(props) {
                 </Route> 
                 <Route path={`${path}/addservices`}>
                     <AddServices/>
+                </Route>       
+                <Route path={`${path}/manageorder`}>
+                    <ManageOrders/>
                 </Route>       
             </Switch>
         </Box>
