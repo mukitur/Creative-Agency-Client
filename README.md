@@ -15,4 +15,4 @@ We Used The following:
     - Admin can Add services
     - Admin can update order
 11. User can visit different packages and place order.
-12. Use emailjs for form
+12. Use emailjs for form. User can send message from website. he/She will receive the message through email.

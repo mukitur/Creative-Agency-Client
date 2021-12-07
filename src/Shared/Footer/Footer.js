@@ -1,10 +1,28 @@
 import { Container, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useRef } from 'react';
 import { useForm } from "react-hook-form";
 import './Foter.css';
+import emailjs from 'emailjs-com';
+
 
 const Footer = () => {
     const { register, handleSubmit, reset } = useForm();
+    //for email js
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_Creative_h1pkj05', 'template_sc88ryi', form.current, 'user_jdWKYuVPcrmQs5UerXt2S')
+        .then((result) => {
+            alert('thank you email sent successfully');
+            reset();
+        }, (error) => {
+            alert('message');
+        });
+        
+    };
+
     return (
         <div style={{background: '#fbd062', marginTop: '50px'}}>
             <Container>
@@ -20,7 +38,7 @@ const Footer = () => {
 
                     <Grid item xs={12} md={6} style={{marginTop: '50px', marginBottom: '50px'}}>
                         <div className="add-footer">
-                            <form>
+                            <form ref={form} onSubmit={sendEmail}>
                                 <input  {...register("email", { required: true, maxLength: 80 })} placeholder="your email address"/>
                                 <input  {...register("name", { required: true, maxLength: 80 })} placeholder="your name/company name"/>
                                 <textarea {...register("message", { required: true, maxLength: 300 })} placeholder="your message" />
