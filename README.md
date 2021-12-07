@@ -13,3 +13,6 @@ We Used The following:
 9. Used React Hook Form, Axios
 10. Admin Role:
     - Admin can Add services
+    - Admin can update order
+11. User can visit different packages and place order.
+12. Use emailjs for form
