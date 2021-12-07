@@ -1,0 +1,19 @@
+.add-contact {
+  margin-top: 10px;
+}
+.add-contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-contact form input {
+  width: 90%;
+  margin-bottom: 10px;
+  height: 35px;
+}
+.add-contact form textarea {
+  width: 90%;
+  margin-bottom: 10px;
+  height: 120px;
+}

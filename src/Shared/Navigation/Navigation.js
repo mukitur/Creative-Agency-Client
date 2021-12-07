@@ -19,6 +19,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import WorkspacesIcon from '@mui/icons-material/Workspaces';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import useAuth from '../../hooks/useAuth';
+import logo from '../../images/logo.png';
 
 const Navigation = () => {
     const { user, logout } = useAuth();
@@ -129,7 +130,7 @@ const Navigation = () => {
                   <MenuIcon/>
                 </IconButton>
                 <Typography style={{marginRight: '25px'}} className={navLogo} variant="h6" component="div" >
-                  <Link className={navItem} to = "/">Creative Agency</Link>
+                  <Link className={navItem} to = "/"><img width="120px" src={logo} alt=""/></Link>
                 </Typography>
                 <Box className = {navItemContainer}  sx={{ flexGrow: 1 }}>
                     <Link className={navItem} to = "/"><Button color="inherit">Home</Button></Link>

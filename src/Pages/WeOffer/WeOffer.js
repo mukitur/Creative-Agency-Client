@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import ShowServices from '../ShowServices/ShowServices';
 
@@ -7,6 +8,7 @@ const WeOffer = () => {
         <div>
             <Navigation/>
             <ShowServices/>
+            <Footer></Footer>
         </div>
     );
 };

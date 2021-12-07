@@ -1,12 +1,12 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useRef } from 'react';
 import { useForm } from "react-hook-form";
-import './Foter.css';
+import './Footer.css';
 import emailjs from 'emailjs-com';
 
 
 const Footer = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, reset } = useForm();
     //for email js
     const form = useRef();
 
