@@ -28,7 +28,7 @@ const Footer = () => {
             <Container>
                 <Grid container spacing={3} >
                     <Grid item xs={12} md={6} style={{marginTop: '50px', marginBottom: '50px'}}>
-                        <Typography variant='h4'>
+                        <Typography style={{fontWeight: '500'}} variant='h4'>
                             Let us handle your projects, Professionally
                         </Typography>
                         <Typography variant='body2'>

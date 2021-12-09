@@ -2,12 +2,13 @@ import React from 'react';
 import Navigation from '../../../Shared/Navigation/Navigation';
 import Footer from '../../../Shared/Footer/Footer';
 import ShowServices from '../../ShowServices/ShowServices';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <h2>This is Home</h2>
+            <Banner/>
             <ShowServices/>
             <Footer></Footer>
         </div>
