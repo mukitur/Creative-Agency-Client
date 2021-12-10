@@ -52,40 +52,39 @@ const MyOrders = () => {
         <div>
              <Typography style={{textAlign:'center'}} variant='h4'>My Orders</Typography>
             <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow style={{background: '#f9f9f9'}}>
-            <TableCell>Name</TableCell>
-            <TableCell align="left">Email</TableCell>
-            <TableCell align="left">Cell</TableCell>
-            <TableCell align="left">Address</TableCell>
-            <TableCell align="left">Action</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {getMyOrders.map((row) => (
-            <TableRow
-              key={row._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="left">{row.email}</TableCell>
-              <TableCell align="left">{row.cell}</TableCell>
-              <TableCell align="left">{row.address}</TableCell>
-              <TableCell align="left">
-                  <Button onClick= {()=>handleDeleteUser(row._id)}>Delete Order</Button>
-            </TableCell>
-              
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-            {
-                success && <Alert severity="success">Successfully Delete Order from Database.</Alert>
-            }
-    </TableContainer>
+                {
+                    success && <Alert severity="success">Successfully Delete Order from Database.</Alert>
+                }
+                <Table aria-label="simple table">
+                    <TableHead>
+                    <TableRow style={{background: '#f9f9f9'}}>
+                        <TableCell>Name</TableCell>
+                        <TableCell align="left">Email</TableCell>
+                        <TableCell align="left">Cell</TableCell>
+                        <TableCell align="left">Address</TableCell>
+                        <TableCell align="left">Action</TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {getMyOrders.map((row) => (
+                        <TableRow
+                        key={row._id}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                        <TableCell component="th" scope="row">
+                            {row.name}
+                        </TableCell>
+                        <TableCell align="left">{row.email}</TableCell>
+                        <TableCell align="left">{row.cell}</TableCell>
+                        <TableCell align="left">{row.address}</TableCell>
+                        <TableCell align="left">
+                            <Button onClick= {()=>handleDeleteUser(row._id)}>Delete Order</Button>
+                        </TableCell>
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
             
         </div>
     );
