@@ -22,6 +22,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ManageOrders from '../../AllOrder/ManageOrders/ManageOrders';
+import MyOrders from '../../MyOrders/MyOrders';
 
 const drawerWidth = 240;
 
@@ -49,6 +50,11 @@ function Dashboard(props) {
             <ListItem button>
                 <ListItemIcon> <DashboardIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}`}><Button style={{color: "black"}} color="inherit">Dashboard</Button></Link><br/>
+            </ListItem>
+            <Divider />
+            <ListItem button>
+                <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
+                <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/myorders`}><Button color="inherit">My Orders</Button></Link>
             </ListItem>
             <Divider />
             <ListItem button>
@@ -150,6 +156,9 @@ function Dashboard(props) {
                 <Route path={`${path}/addservices`}>
                     <AddServices/>
                 </Route>       
+                <Route path={`${path}/myorders`}>
+                    <MyOrders/>
+                </Route>       
                 <Route path={`${path}/manageorder`}>
                     <ManageOrders/>
                 </Route>       
@@ -160,10 +169,6 @@ function Dashboard(props) {
   }
   
   Dashboard.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
   };
 
