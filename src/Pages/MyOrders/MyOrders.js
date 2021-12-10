@@ -20,7 +20,12 @@ const MyOrders = () => {
 
     //filter only my orders
     const getMyOrders = orders.filter(od=>od.email === user.email)
-    console.log(getMyOrders)
+    //console.log(getMyOrders)
+
+    //Delete User
+    const handleDeleteUser = id=>{
+        
+    }
 
     return (
         <div>
@@ -49,7 +54,7 @@ const MyOrders = () => {
               <TableCell align="left">{row.cell}</TableCell>
               <TableCell align="left">{row.address}</TableCell>
               <TableCell align="left">
-                  <Button>Delete Order</Button>
+                  <Button onClick= {()=>handleDeleteUser(row._id)}>Delete Order</Button>
             </TableCell>
               
             </TableRow>
