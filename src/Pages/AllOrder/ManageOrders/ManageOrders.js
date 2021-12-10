@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Alert, Button, Typography } from '@mui/material';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import UpdateIcon from '@mui/icons-material/Update';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -75,8 +77,8 @@ const ManageOrders = () => {
                         <TableCell align="left">{row.address}</TableCell>
                         <TableCell align="left">{row.status}</TableCell>
                         <TableCell align="left">
-                            <Button onClick= {()=>handleDeleteUser(row._id)}>Delete Order</Button>
-                            <Button>UPDATE STATUS</Button>
+                            <Button style={{fontSize: '12px'}} onClick= {()=>handleDeleteUser(row._id)}><DeleteForeverIcon/>Delete Order</Button>
+                            <Button style={{fontSize: '12px'}}><UpdateIcon/>UPDATE STATUS</Button>
                         </TableCell>
                         
                         </TableRow>

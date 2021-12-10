@@ -13,7 +13,7 @@ We Used The following:
 9. Used React Hook Form, Axios
 10. Admin Role:
     - Admin can Add services
-    - Admin can update order
-11. User can visit different packages and place order.
+    - Admin can delete order. When a order delete it shows a confirmation message and auto sort rest order.
+11. User can visit different packages and place order. Successful completion of an order users can see his/her orders list and can delete order.
 12. Use emailjs for form. User can send message from website. he/She will receive the message through email.
 13. Use Material UI table to display order information

@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Alert, Button, Typography } from '@mui/material';
 import useAuth from '../../hooks/useAuth';
-import { DataArray } from '@mui/icons-material';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -78,7 +78,7 @@ const MyOrders = () => {
                         <TableCell align="left">{row.cell}</TableCell>
                         <TableCell align="left">{row.address}</TableCell>
                         <TableCell align="left">
-                            <Button onClick= {()=>handleDeleteUser(row._id)}>Delete Order</Button>
+                            <Button style={{fontSize: '12px'}} onClick= {()=>handleDeleteUser(row._id)}> <DeleteForeverIcon/>Delete Order</Button>
                         </TableCell>
                         </TableRow>
                     ))}

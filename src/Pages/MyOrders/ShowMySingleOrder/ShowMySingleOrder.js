@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ShowMySingleOrder = ({order}) => {
-    const {name, email, cell, address} = order;
+    const {name} = order;
     return (
         <div>
              <h2>Show order {order.length}</h2>
