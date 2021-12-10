@@ -1,0 +1,14 @@
+.add-admin {
+  margin-top: 10px;
+}
+.add-admin form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.add-admin form input {
+  width: 50%;
+  margin-bottom: 10px;
+  height: 35px;
+}

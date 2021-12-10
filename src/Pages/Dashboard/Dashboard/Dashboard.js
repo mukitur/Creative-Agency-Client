@@ -23,12 +23,14 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ManageOrders from '../../AllOrder/ManageOrders/ManageOrders';
 import MyOrders from '../../MyOrders/MyOrders';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
     const { user, logout } = useAuth();
     let { path, url } = useRouteMatch();
+    const {admin}=useAuth();
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -57,6 +59,7 @@ function Dashboard(props) {
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/myorders`}><Button color="inherit">My Orders</Button></Link>
             </ListItem>
             <Divider />
+
             <ListItem button>
                 <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/addservices`}><Button color="inherit">Add Services</Button></Link>
@@ -65,6 +68,11 @@ function Dashboard(props) {
             <ListItem button>
                 <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/manageorder`}><Button color="inherit">Manage Order</Button></Link>
+            </ListItem>
+            <Divider />
+            <ListItem button>
+                <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
+                <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
             </ListItem>
             <Divider />
             <ListItem button>
@@ -161,6 +169,9 @@ function Dashboard(props) {
                 </Route>       
                 <Route path={`${path}/manageorder`}>
                     <ManageOrders/>
+                </Route>       
+                <Route path={`${path}/makeadmin`}>
+                    <MakeAdmin/>
                 </Route>       
             </Switch>
         </Box>

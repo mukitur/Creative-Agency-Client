@@ -9,6 +9,7 @@ initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
     const [authError, setAuthError] = useState('');
 
     const auth = getAuth();
@@ -22,6 +23,8 @@ const useFirebase = () => {
                 setAuthError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                //save user to the Database
+                saveUser(email, name);
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -58,6 +61,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
+                saveGoogleLoginUser(user.email, user.displayName);
                 setAuthError('');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -80,6 +84,13 @@ const useFirebase = () => {
         return () => unsubscribed;
     }, [])
 
+    //set admin/ not
+    useEffect( ()=>{
+        fetch(`http://localhost:8000/${user.email}`)
+            .then(res=>res.json())
+            .then(data=>setAdmin(data.admin))
+    } ,[user.email])
+
     //Logout function implemented
     const logout = () => {
         setIsLoading(true);
@@ -91,8 +102,34 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // Save Registered user data to Database
+    const saveUser = (email, displayName) => {
+        const user = {email,displayName};
+        fetch('http://localhost:8000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then()
+    }
+    // Save Google Registered user data to Database
+    const saveGoogleLoginUser = (email, displayName) => {
+        const user = {email,displayName};
+        fetch('http://localhost:8000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then()
+    }
+
     return {
         user,
+        admin,
         isLoading,
         authError,
         registerUser,
