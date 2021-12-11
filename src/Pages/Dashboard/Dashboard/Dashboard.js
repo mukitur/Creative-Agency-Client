@@ -24,6 +24,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import ManageOrders from '../../AllOrder/ManageOrders/ManageOrders';
 import MyOrders from '../../MyOrders/MyOrders';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import PersonIcon from '@mui/icons-material/Person';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import AdminRoute from '../../Login/Admin Route/AdminRoute';
 
 const drawerWidth = 240;
 
@@ -63,9 +66,8 @@ function Dashboard(props) {
         </List>
           
          {
-           admin && <Box>
+           admin &&  
                
-           
            <List>
               <ListItem button>
                 <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
@@ -73,16 +75,15 @@ function Dashboard(props) {
               </ListItem>
               <Divider />
             <ListItem button>
-                <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
+                <ListItemIcon> <BorderColorIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/manageorder`}><Button color="inherit">Manage Order</Button></Link>
             </ListItem>
             <Divider />
             <ListItem button>
-                <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
+                <ListItemIcon> <PersonIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
             </ListItem>
-          </List>
-          </Box>
+          </List>  
         }
             
         <List>
@@ -172,19 +173,19 @@ function Dashboard(props) {
             <Switch> 
                 <Route exact path={path}>
                     <DashboardHome/>
-                </Route> 
-                <Route path={`${path}/addservices`}>
-                    <AddServices/>
-                </Route>       
+                </Route>
                 <Route path={`${path}/myorders`}>
                     <MyOrders/>
-                </Route>       
-                <Route path={`${path}/manageorder`}>
+                </Route>   
+                <AdminRoute path={`${path}/addservices`}>
+                    <AddServices/>
+                </AdminRoute>            
+                <AdminRoute path={`${path}/manageorder`}>
                     <ManageOrders/>
-                </Route>       
-                <Route path={`${path}/makeadmin`}>
+                </AdminRoute>       
+                <AdminRoute path={`${path}/makeadmin`}>
                     <MakeAdmin/>
-                </Route>       
+                </AdminRoute>       
             </Switch>
         </Box>
       </Box>
