@@ -86,7 +86,7 @@ const useFirebase = () => {
 
     //set admin/ not
     useEffect( ()=>{
-        fetch(`http://localhost:8000/${user.email}`)
+        fetch(`http://localhost:8000/users/${user?.email}`)
             .then(res=>res.json())
             .then(data=>setAdmin(data.admin))
     } ,[user.email])
@@ -118,7 +118,7 @@ const useFirebase = () => {
     const saveGoogleLoginUser = (email, displayName) => {
         const user = {email,displayName};
         fetch('http://localhost:8000/users', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },

@@ -28,10 +28,10 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  const {admin} = useAuth();
     const { user, logout } = useAuth();
     let { path, url } = useRouteMatch();
-    const {admin}=useAuth();
-
+    
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
   
@@ -43,6 +43,7 @@ function Dashboard(props) {
       <div>
         <Toolbar />
         <Divider />
+        
         <List>
             <ListItem button>
                 <ListItemIcon> <HomeIcon/></ListItemIcon>
@@ -59,12 +60,18 @@ function Dashboard(props) {
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/myorders`}><Button color="inherit">My Orders</Button></Link>
             </ListItem>
             <Divider />
-
-            <ListItem button>
+        </List>
+          
+         {
+           admin && <Box>
+               
+           
+           <List>
+              <ListItem button>
                 <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/addservices`}><Button color="inherit">Add Services</Button></Link>
-            </ListItem>
-            <Divider />
+              </ListItem>
+              <Divider />
             <ListItem button>
                 <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/manageorder`}><Button color="inherit">Manage Order</Button></Link>
@@ -74,19 +81,24 @@ function Dashboard(props) {
                 <ListItemIcon> <DesignServicesIcon/></ListItemIcon>
                 <Link style={{color: "black", textDecoration: 'none'}} to={`${url}/makeadmin`}><Button color="inherit">Make Admin</Button></Link>
             </ListItem>
-            <Divider />
-            <ListItem button>
-                <ListItemIcon> <LogoutIcon/></ListItemIcon>
-                {
-                        user?.email ?
-                            <Button style={{color: 'black'}} onClick={logout} color="inherit">Logout</Button>
-                            :
-                            <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/login">
-                                <Button color="inherit">Login</Button>
-                            </NavLink>
-                    }
-            </ListItem>
-            <Divider />
+          </List>
+          </Box>
+        }
+            
+        <List>
+          <Divider />
+          <ListItem button>
+            <ListItemIcon> <LogoutIcon/></ListItemIcon>
+                  {
+                    user?.email ?
+                        <Button style={{color: 'black'}} onClick={logout} color="inherit">Logout</Button>
+                        :
+                        <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/login">
+                            <Button color="inherit">Login</Button>
+                        </NavLink>
+                  }
+          </ListItem>
+          <Divider />
         </List>
       </div>
     );

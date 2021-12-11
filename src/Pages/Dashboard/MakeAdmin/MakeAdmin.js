@@ -47,18 +47,18 @@ const MakeAdmin = () => {
         <div className="add-admin">
             <Typography  style={{textAlign:'center', paddingBottom:'20px'}} variant='h3'>Make an Admin</Typography>
             <form onSubmit={handleMakeAdmin}>
-            <TextField
-                sx={{ width: '70%', m: 1 }}
-                id="outlined-size-small"
-                label="Email"
-                varient = "standard"
-                name="email"
-                onBlur={handleOnBlur}
-                size="small"
-            />
-            <br/>
-            <Button type="submit" variant="contained">Make Admin</Button>
-        </form>
+                <TextField
+                    sx={{ width: '70%', m: 1 }}
+                    id="outlined-size-small"
+                    label="Email"
+                    varient = "standard"
+                    name="email"
+                    onBlur={handleOnBlur}
+                    size="small"
+                />
+                <br/>
+                <Button type="submit" variant="contained">Make Admin</Button>
+            </form>
             {
             success && <Alert severity="success">Successfully added Admin!</Alert>
             }
