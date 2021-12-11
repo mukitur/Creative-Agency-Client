@@ -12,7 +12,6 @@ import UpdateIcon from '@mui/icons-material/Update';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
-    const [status, setStatus] = useState('pending');
     const [success, setSuccess] = useState(false);
 
     useEffect( ()=>{

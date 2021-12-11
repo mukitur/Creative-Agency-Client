@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com';
 import { Container, Grid, Typography } from '@mui/material';
 
 const Contact = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, reset } = useForm();
     //for email js
     const form = useRef();
 

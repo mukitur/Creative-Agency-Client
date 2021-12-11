@@ -1,27 +1,13 @@
 import { Alert, Button, TextField, Typography } from '@mui/material';
 import React, {useState} from 'react';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
 import './MakeAdmin.css';
 
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, reset } = useForm();
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     
 
-    /* const onSubmit = data => {
-        console.log(data);
-        axios.post('http://localhost:8000/services', data)
-        .then(res=>{
-            console.log(res);
-            if(res.data.insertedId){
-                alert('added successfully');
-            }
-            reset();
-        })
-    }     */
     const handleOnBlur = e => {
         setEmail(e.target.value);
     }
